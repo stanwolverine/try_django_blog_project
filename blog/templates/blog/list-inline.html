@@ -1,0 +1,14 @@
+<div class="col-12 col-md-10 mb-3 mx-auto">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">
+				<a href="{% url 'blog-detail' blog_post.slug %}">
+					{{ blog_post.title }}
+				</a>
+			</h5>
+			<p class="card-text">
+				{% if truncate %} {{ blog_post.content|linebreaks|truncatewords:30 }} {% else %} {{ blog_post.content|linebreaks }} {% endif %}
+			</p>
+		</div>
+	</div>
+</div>

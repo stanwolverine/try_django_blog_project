@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ object.title }}</h1>
+<p>{{ object.content }}</p>
+{% if request.user.is_authenticated %} {% if request.user.is_staff %}
+<a style="text-decoration: none; color: aliceblue;" href="{% url 'blog-update' object.slug %}"><button class="btn btn-info">Edit</button></a>
+<a style="text-decoration: none; color: aliceblue;" href="{% url 'blog-delete' object.slug %}"><button class="btn btn-danger">Delete</button></a>
+{% endif %} {% endif %} {% endblock content %}
