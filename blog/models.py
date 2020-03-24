@@ -22,7 +22,7 @@ class BlogPost(models.Model):
     # id = models.IntegerField() #pk i.e. primary key
     user = models.ForeignKey(User, default=1, null=True,
                              on_delete=models.SET_NULL)
-    image = models.FileField(upload_to='image/', null=True, blank=True)
+    image = models.ImageField(upload_to='image/', null=True, blank=True)
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)  # hello world -> hello-world
     content = models.TextField(null=True, blank=True)

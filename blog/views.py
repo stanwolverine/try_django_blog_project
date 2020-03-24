@@ -26,7 +26,7 @@ def blog_post_create_view(request):
     # ? use a form
     template_name = 'blog/form.html'
     if request.method == 'POST':
-        form = BlogPostModelForm(request.POST or None)
+        form = BlogPostModelForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             obj = form.save(commit=False)
             # obj.title = form.cleaned_data.get('title') + "xyz"
